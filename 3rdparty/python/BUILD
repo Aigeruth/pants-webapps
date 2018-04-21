@@ -1,0 +1,39 @@
+python_requirement_library(
+    name='click',
+    requirements=[
+        python_requirement('click==6.7'),
+    ]
+)
+python_requirement_library(
+    name='Jinja2',
+    requirements=[
+        python_requirement('Jinja2==2.10'),
+	python_requirement('MarkupSafe==1.0'),
+    ]
+)
+python_requirement_library(
+    name='Flask',
+    dependencies=[
+	':click',
+        ':Jinja2',
+    ],
+    requirements=[
+        python_requirement('Flask==0.12.2'),
+        python_requirement('Werkzeug==0.14.1'),
+        python_requirement('itsdangerous==0.24'),
+    ]
+)
+python_requirement_library(
+    name='pytest-flask',
+    requirements=[
+        python_requirement('pytest-flask==0.10.0'),
+    ]
+)
+python_requirement_library(
+    name='ipython',
+    requirements=[python_requirement('ipython==5.6.0')],
+)
+python_requirement_library(
+    name='gunicorn',
+    requirements=[python_requirement('gunicorn==19.7.1')],
+)
